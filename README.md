@@ -109,6 +109,5 @@ password-generator/
 
 <hr>
 
-<h2>Autoria</h2>
-<p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-ventura-nellessen/">Matheus Ventura Nellessen</a>.</p>
-<p>Sinta-se a vontade para entrar em contato!</p>
+<h2>Licença e Autor</h2>
+<p>Este projeto foi desenvolvido por <a href="https://www.linkedin.com/in/matheus-ventura-nellessen/">Matheus Ventura Nellessen</a> e está licenciado sob a licença MIT. Veja o <a href="./LICENSE">documento</a> para mais detalhe.</p>
