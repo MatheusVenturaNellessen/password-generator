@@ -7,11 +7,15 @@
 <ul>
     <li>HTML5</li>
     <li>CSS3</li>
-    <li>JavaScript</li>
+    <li>JavaScript (ES6+)</li>
     <li>Node.js v20.17.0</li>
-    <li>Node Package Manager (npm) v10.8.2</li>
-    <li>Webpack v5.98.0</li>
-    <li>Babel v7.26.9</li>
+    <li>Node Package Manager (npm) ^10.8.2</li>
+    <li>Webpack ^5.98.0</li>
+    <li>Babel ^7.26.9</li>
+    <li>core-js ^3.40.0</li>
+    <li>regenerator-runtime ^0.14.1</li>
+    <li>css-loader ^7.1.2</li>
+    <li>style-loader ^4.0.0</li>
     <li>Visual Studio Code v1.98.2</li>
 </ul>
 
@@ -20,30 +24,28 @@
 <h2>Estrutura das pastas</h2>
 <pre>
 PASSWORD-GENERATOR/
-├── docs/                                    # Contém os arquivos finais do site
+├── docs/                                        # Contém os arquivos finais do projeto
 │   ├── assets/
 │   │   └── js/
-│   │       ├── bundle.js                    # Script final do site (gerado via Webpack + Babel)
-│   │       └── bundle.js.map                # Mapa de bundle.js (útil para rastreamento e debugging com DevTools)
-│   └── index.html                           # Página principal do site
+│   │       ├── bundle.js                        # Script final do site (gerado via Webpack + Babel)
+│   │       └── bundle.js.map                    # Mapa de bundle.js
+│   └── index.html                               # Página principal do site
 │
-├── src/                                     # Contém o código-fonte do projeto
+├── src/                                         # Códigos-fontes do projeto
 │   └── assets/
 │       ├── css/
-│       │   └── style.css                    # Arquivo de estilo do projeto (importado e empacotado via css-loader/style-loader)
+│       │   └── style.css                        # Arquivo de estilo
 │       └── js/
-│           ├── modules/
+│           ├── modules/                         # Scripts do projeto modularizados
 │           │   ├── generateChar.js
 │           │   └── GeneratePassword.js
-│           └── main.js                      # Script principal do projeto que integra todos os módulos
+│           └── main.js                          # Script principal do projeto
 │
-├── package-lock.json
-├── package.json                             # Informações do projeto e scripts npm
-└── webpack.config.js                        # Configuração do Webpack
+├── package-lock.json                            # Versiona as dependências exatas do projeto
+├── package.json                                 # Informações do projeto, dependências e scripts npm
+└── webpack.config.js                            # Configurações do Webpack
 </pre>
-
 <p>Outros arquivos e pastas foram omitidos por não serem essenciais para o entendimento da estrutura do projeto.</p>
-
 <p><strong>Nota:</strong> A pasta <code>docs/</code> também é usada para o deploy via GitHub Pages. No entanto, seu conteúdo é fundamental para o funcionamento do projeto, pois contém os arquivos transpilados e empacotados pelo Webpack.</p>
 
 <hr>
@@ -61,10 +63,10 @@ PASSWORD-GENERATOR/
     <br>
     <li><strong>Criação de senhas personalizáveis:</strong> o usuário pode configurar a senha com os seguintes caracteres:
         <ul>
-            <li>Números</li>
-            <li>Letras maiúsculas</li>
-            <li>Letras minúsculas</li>
-            <li>Caracteres especiais</li>
+            <li>Números.</li>
+            <li>Letras maiúsculas.</li>
+            <li>Letras minúsculas.</li>
+            <li>Caracteres especiais.</li>
         </ul>
     </li>
 </ul>
@@ -81,23 +83,24 @@ PASSWORD-GENERATOR/
 <h2>Como rodar o projeto em seu ambiente</h2>
 <p>Para executar este projeto, é necessário ter os seguintes pré-requisitos:</p>
 <ul>
-    <li><a href="https://nodejs.org/pt" target="_blank">Node.js</a> v20.17.0 ou superior</li>
-    <li>Node Package Manager (npm)</li>
+    <li>Node.js - versão mínima recomendada: 20.x ou superior.</li>
+    <li>Node Package Manager (npm) - versão mínima recomendada: 10.x ou superior.</li>
 </ul>
 
-<p><strong>Passo a passo:</strong></p>
+<p>Passo a passo:</p>
 <ol>
-    <li>Instale o Node.js (se ainda não o tiver): <a href="https://nodejs.org/pt" target="_blank">baixar aqui</a></li>
-    <li>Clone o repositório:</li>
+    <li>Instale o Node.js clicando <a href="https://nodejs.org/pt" target="_blank">aqui</a>.</li>
+    <li>Após a instalação, navegue até um diretório pretendido:</li>
+    <pre><code>cd caminho/do/diretorio</code></pre>
+    <li>No diretório escolhido, clone o repositório:</li>
     <pre><code>git clone https://github.com/MatheusVenturaNellessen/password-generator.git</code></pre>
-    <li>Navegue até a pasta do projeto:</li>
-    <pre><code>cd password-generator</code></pre>
-    <li>Instale as dependências:</li>
+    <li>Instale as dependências executando o seguinte comando:</li>
     <pre><code>npm install</code></pre>
-    <li>Abra o arquivo <code>index.html</code> dentro da pasta <strong>docs/</strong> em um navegador.</li>
+    <p>Após executar este comando, a pasta <code>node_modules/</code> será criada em seu ambiente com as dependências necessárias do projeto.</p>
+    <li>Abra o arquivo <code>index.html</code> localizado na pasta <strong>docs/</strong> em um navegador.</li>
 </ol>
-
-<p>Para gerar os arquivos finais novamente após alterações:</p>
+<h4>Observação:</h4>
+<p>Para gerar os arquivos finais novamente após alterações, execute o comando:</p>
 <pre><code>npm run build</code></pre>
 
 <hr>
